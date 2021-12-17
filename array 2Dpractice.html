@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {padding-top:30px}
+    </style>
+</head>
+<body>
+<h2>Samplescreen</h2>
+<input type="text" id="txtValue"/>
+<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
+<input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+<br>
+<textarea id="result"></textarea>
+<script>
+    let x = 0; /*chỉ số của mảng array*/
+    let array = [];
+    function add_element_to_array() {
+        array[x] = document.getElementById('txtValue').value;
+        alert("phần tử " + array[x] + " có vị trí là " + x)
+        x++;
+        document.getElementById("txtValue ").value = "";
+    }
+
+    function display_array() {
+        let yeah = "";
+        for (dem = 0; dem < array.length; dem++) { /*duyệt mảng*/
+            yeah += "Phần tử số " + dem + " = " + array[dem]+"\n";
+        }
+        document.getElementById('result').innerHTML = yeah
+    }
+</script>
+</body>
+</html>
